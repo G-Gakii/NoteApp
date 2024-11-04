@@ -1,3 +1,14 @@
-<div class="search">
-  <input type="text" name="search" />
+<div class="flex p-4">
+  <div class="search bg-gray-100 flex p-4 w-3/4 rounded-lg">
+    <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+    <input
+      type="text"
+      name="search"
+      placeholder="search"
+      class="bg-transparent ml-3 w-full"
+    />
+  </div>
+  <button routerLink="/add" class="ml-4 bg-blue-600 p-4 rounded-3xl text-white">
+    + Add
+  </button>
 </div>

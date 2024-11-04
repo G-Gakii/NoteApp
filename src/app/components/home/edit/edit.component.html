@@ -1,5 +1,6 @@
-<form class="p-4 bg-white" [formGroup]="notes">
-  <h2 class="pb-2 mb-4 border-b">Add note</h2>
+<p>edit works!</p>
+<form class="p-4 bg-white" [formGroup]="noteForm">
+  <h2 class="pb-2 mb-4 border-b">Edit note</h2>
   <div class="div flex gap-2 justify-between mr-4">
     <input
       class="bg-gray-100 p-2 w-2/3"
@@ -31,7 +32,7 @@
     ></textarea>
     <div class="button text-blue-600">
       <button>Cancel</button>
-      <button (click)="AddTask()" type="button" class="mx-4">Add</button>
+      <button type="button" class="mx-4">edit</button>
     </div>
   </div>
 </form>

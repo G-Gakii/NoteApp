@@ -1,1 +1,54 @@
-<p>home works!</p>
+<div class="home_container p-4 bg-gray-100">
+  <h1>Your notes</h1>
+  <ul class="uppercase flex border-b">
+    <li
+      class="mx-4 hover:text-blue-600 hover:border-b border-blue-600 transition duration-700"
+    >
+      All
+    </li>
+    <li
+      class="hover:text-blue-600 hover:border-b border-blue-600 transition duration-700"
+    >
+      personal
+    </li>
+    <li
+      class="mx-4 hover:text-blue-600 hover:border-b border-blue-600 transition duration-700"
+    >
+      work
+    </li>
+    <li
+      class="hover:text-blue-600 hover:border-b border-blue-600 transition duration-700"
+    >
+      business
+    </li>
+  </ul>
+  <div class="grid grid-cols-4 gap-4 py-2">
+    @for (item of mytask; track $index) {
+    <div class="bg-white p-4 rounded-md">
+      <div class="flex justify-between">
+        <button
+          class="lowercase p-2 rounded-xl"
+          [ngClass]="{
+            home: item.category === 'PERSONAL',
+            business: item.category === 'BUSINESS',
+            work: item.category === 'WORK'
+          }"
+        >
+          {{ item.category }}
+        </button>
+        <div class="flex">
+          <p (click)="EditItem(item.id)">
+            <fa-icon class="mr-2" [icon]="faPencil"></fa-icon>
+          </p>
+
+          <p (click)="removeItem($index)">
+            <fa-icon [icon]="faTrash"></fa-icon>
+          </p>
+        </div>
+      </div>
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.description }}</p>
+    </div>
+    }
+  </div>
+</div>
