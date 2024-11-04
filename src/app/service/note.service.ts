@@ -6,7 +6,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   providedIn: 'root',
 })
 export class NoteService {
-  task = signal<Task[]>([]);
+  mynotes = signal<Task[]>([]);
   myitem = signal<Task[]>([]);
 
   notes: FormGroup = new FormGroup({

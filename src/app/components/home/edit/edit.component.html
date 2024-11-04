@@ -1,9 +1,8 @@
-<p>edit works!</p>
-<form class="p-4 bg-white" [formGroup]="noteForm">
-  <h2 class="pb-2 mb-4 border-b">Edit note</h2>
-  <div class="div flex gap-2 justify-between mr-4">
+<form class="p-8 bg-white rounded-lg" [formGroup]="noteForm">
+  <h2 class="pb-2 mb-4 border-b text-xl">Edit note</h2>
+  <div class="div flex gap-8 justify-between mr-4 flex-col sm:flex-row">
     <input
-      class="bg-gray-100 p-2 w-2/3"
+      class="bg-gray-100 rounded-lg p-4 sm:w-8/12 hover:outline hover:outline-blue-600 focus:outline focus:outline-blue-600"
       type="text"
       name="title"
       id="title"
@@ -11,7 +10,7 @@
       formControlName="title"
     />
     <select
-      class="bg-gray-100 outline-none p-4"
+      class="bg-gray-100 rounded-lg outline-none p-4 sm:w-1/3 hover:outline hover:outline-blue-600 focus:outline focus:outline-blue-600"
       name="category"
       id="category"
       formControlName="category"
@@ -22,17 +21,19 @@
       <option value="BUSINESS">Business</option>
     </select>
   </div>
-  <div class="mt-4 flex justify-between items-end">
+  <div class="mt-4 flex flex-col sm:flex-row gap-10 justify-between items-end">
     <textarea
-      class="bg-gray-100 min-h-32 p-4 w-2/3"
+      class="bg-gray-100 rounded-lg w-full min-h-48 p-2 sm:w-8/12 hover:outline hover:outline-blue-600 focus:outline focus:outline-blue-600"
       name="desc"
       id="desc"
       formControlName="desc"
       placeholder="Add description"
     ></textarea>
-    <div class="button text-blue-600">
-      <button>Cancel</button>
-      <button type="button" class="mx-4">edit</button>
+    <div class="button text-blue-600 sm:w-1/3 text-end">
+      <button (click)="cancel()" class="uppercase">Cancel</button>
+      <button type="button" (click)="updateTask()" class="mx-4 uppercase">
+        edit
+      </button>
     </div>
   </div>
 </form>

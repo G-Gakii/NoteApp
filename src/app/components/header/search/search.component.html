@@ -1,14 +1,18 @@
-<div class="flex p-4">
-  <div class="search bg-gray-100 flex p-4 w-3/4 rounded-lg">
+<div class="flex justify-between py-6 w-full">
+  <div
+    class="search bg-gray-100 flex p-4 w-9/12 rounded-lg hover:outline hover:outline-blue-600 focus:outline focus:outline-blue-600"
+  >
     <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
     <input
+      (input)="searchedItem()"
+      [(ngModel)]="searchItem"
       type="text"
       name="search"
-      placeholder="search"
-      class="bg-transparent ml-3 w-full"
+      placeholder="search notes..."
+      class="bg-transparent ml-3 w-full outline-none"
     />
   </div>
-  <button routerLink="/add" class="ml-4 bg-blue-600 p-4 rounded-3xl text-white">
+  <button routerLink="/add" class="ml-4 bg-blue-600 px-3 rounded-xl text-white">
     + Add
   </button>
 </div>

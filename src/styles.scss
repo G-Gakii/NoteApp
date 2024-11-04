@@ -2,7 +2,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   background-color: rgba(128, 128, 128, 0.947);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
